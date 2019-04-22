@@ -6,6 +6,10 @@
     <groupId>com.liujiazhen.study</groupId>
     <artifactId>study</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>bridge</module>
+        <module>service-api</module>
+    </modules>
     <packaging>pom</packaging>
 
 <!--     <modules>
