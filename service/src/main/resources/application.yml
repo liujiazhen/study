@@ -1,0 +1,18 @@
+server:
+  port: 65500
+
+spring:
+  application:
+    name: liujiazhen
+  redis:
+    host: 39.106.158.161
+    port: 6379
+    timeout: 20000
+
+#swagger
+#swagger:
+#  title: SWAGGER RESTFUL APIS
+#  description: 扫描 【com.rrs.cdkinstall.bridge】 包
+#  base-package: com.rrs.cdkinstall.bridge.controller
+#  contact: siufung.chen
+#  version: 1.0.1
