@@ -19,6 +19,7 @@
         <module>bridge</module>
         <module>service-api</module>
         <module>service</module>
+        <module>parent</module>
     </modules>
     <packaging>pom</packaging>
 
