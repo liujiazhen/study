@@ -1,4 +1,4 @@
-package com.liujiazhen.study.redis;
+package com.liujiazhen.study.lambad;
 
 import java.time.LocalDate;
 

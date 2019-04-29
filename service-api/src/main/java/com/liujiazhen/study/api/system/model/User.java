@@ -1,4 +1,6 @@
-package com.liujiazhen.study.user;
+package com.liujiazhen.study.api.system.model;
+
+import java.time.LocalDateTime;
 
 /**
  * Copyright © 2019 LiuJiazhen
@@ -16,19 +18,20 @@ package com.liujiazhen.study.user;
  */
 
 public class User {
-    private String id;
+    private Long id;
     private String username;
     private String password;
     private String phone;
     private String email;
-    private String created;
-    private String updated;
 
-    public String getId() {
+    private LocalDateTime created;
+    private LocalDateTime updated;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -64,32 +67,32 @@ public class User {
         this.email = email;
     }
 
-    public String getCreated() {
+    public LocalDateTime getCreated() {
         return created;
     }
 
-    public void setCreated(String created) {
+    public void setCreated(LocalDateTime created) {
         this.created = created;
     }
 
-    public String getUpdated() {
+    public LocalDateTime getUpdated() {
         return updated;
     }
 
-    public void setUpdated(String updated) {
+    public void setUpdated(LocalDateTime updated) {
         this.updated = updated;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
-                ", created='" + created + '\'' +
-                ", updated='" + updated + '\'' +
+                ", created=" + created +
+                ", updated=" + updated +
                 '}';
     }
 }

@@ -3,15 +3,19 @@ server:
 
 spring:
   application:
-    name: liujiazhen
+    name: liujiazhen_study
   redis:
     host: 39.106.158.161
     port: 6379
     timeout: 20000
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://106.12.89.174:3306/taotao?characterEncoding=utf8
+    url: jdbc:mysql://39.106.158.161:3306/taotao?characterEncoding=utf8
     username: liujiazhen
-    password: 1234
+    password: liujiazhen
 
-
+#mybatis
+mybatis:
+  mapper-locations: classpath:mybatis/**/*Mapper.xml
+  #扫描包，配置别名
+#  type-aliases-package: com.liujiazhen.study.api.*

@@ -1,4 +1,4 @@
-package com.liujiazhen.study.redis;
+package com.liujiazhen.study.lambad;
 
 import org.junit.Test;
 
@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Copyright © 2019 LiuJiazhen
+ * Copyright © 2019 LiuJiaZhen
  * <p>
  * description:
  *
@@ -25,9 +25,10 @@ public class LambadTest {
 
     @Test
     public void test() {
-        String queryDate = "item=book&data=2019-01-01&price=200&name=tom";
-        Map<String, String> collect = Stream.of(queryDate.split("&")).map(s -> s.split("=")).collect(Collectors.toMap(s -> s[0], s -> s[1]));
-        System.out.println(collect);
+        String queryDate = "item=book&data=2019-01-01&price=200&name=";
+
+        Map<String, String> map = Stream.of(queryDate.split("&")).map(s -> s.split("=")).collect(Collectors.toMap(s -> s[0], s -> s.length == 1 ? "" : s[1]));
+        System.out.println(map);
     }
 
     @Test
@@ -51,6 +52,15 @@ public class LambadTest {
         books().stream().sorted(comparator).forEach(System.out::println);
     }
 
+    @Test
+    public void test5() {
+        String collect = books().stream().map(book -> book.getType() + "").distinct().collect(Collectors.joining(","));
+        System.out.println(collect);
+
+        String collect1 = Stream.of(collect.split(",")).map(s -> "'" + s + "'").collect(Collectors.joining(",", "(", ")"));
+        System.out.println(collect1);
+    }
+
     private List<Book> books() {
         List<Book> books = new ArrayList<>();
         books.add(new Book(1, "tomcat", 70d, "服务器", LocalDate.parse("2014-05-17")));
@@ -70,5 +80,19 @@ public class LambadTest {
         books.add(new Book(15, "算法导论", 66d, "其他", LocalDate.parse("2010-05-08")));
         books.add(new Book(16, "oracle 12c", 150d, "数据库", LocalDate.parse("2017-05-08")));
         return books;
+    }
+
+    @Test
+    public void test6() {
+        books().stream().filter(book -> book.getPirce() > 70).sorted(Comparator.comparing(Book::getLocalDate)).forEach(System.out::println);
+    }
+}
+
+class MyTest {
+    public static double PI_MY = 3.14D;
+
+    @SafeVarargs
+    private static String getStrUpper(List<String>... str) {
+        return "liujiazhen";
     }
 }

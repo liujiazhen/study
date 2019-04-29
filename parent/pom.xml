@@ -25,6 +25,7 @@
         </profile>
     </profiles>
 
+
     <!-- Maven私服配置 -->
     <repositories>
         <repository>

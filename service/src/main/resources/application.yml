@@ -1,18 +1,9 @@
-server:
-  port: 65500
-
 spring:
-  application:
-    name: liujiazhen
-  redis:
-    host: 39.106.158.161
-    port: 6379
-    timeout: 20000
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://39.106.158.161:3306/taotao?characterEncoding=utf8
-    username: liujiazhen
-    password: liujiazhen
+  profiles:
+    active: prod
+
+
+
 #swagger
 #swagger:
 #  title: SWAGGER RESTFUL APIS
