@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Copyright © 2019 LiuJiazhen
@@ -42,7 +43,7 @@ public class MybatisTest {
     @Test
     public void getUserList() {
         User user = new User();
-        List<User> userByParamList = userService.getUserByParamList(user);
-        userByParamList.forEach(System.out::println);
+        List<User> list = userService.getUserByParamList(user);
+        list.stream().filter(elem -> elem.getId() > 20L).collect(Collectors.toList()).forEach(System.out::println);
     }
 }

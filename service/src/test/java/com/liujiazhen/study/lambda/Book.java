@@ -1,4 +1,4 @@
-package com.liujiazhen.study.lambad;
+package com.liujiazhen.study.lambda;
 
 import java.time.LocalDate;
 

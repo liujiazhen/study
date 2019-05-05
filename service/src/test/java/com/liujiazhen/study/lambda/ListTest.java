@@ -1,4 +1,4 @@
-package com.liujiazhen.study.lambad;
+package com.liujiazhen.study.lambda;
 
 import org.junit.Test;
 
@@ -77,12 +77,6 @@ public class ListTest {
 
     interface GreetingService {
         void sayMessage(String message);
-    }
-
-    @Test
-    public void test7() {
-        String str = "[{\"categoryIds\":\"50019790\",\"brandIds\":\"193874401|113190408|704278962|3268300|11016\"},{\"categoryIds\":\"122014001\",\"brandIds\":\"193874401|113190408|704278962|3268300|11016\"},{\"categoryIds\":\"50013474\",\"brandIds\":\"193874401|113190408|704278962|3268300|11016\"},{\"categoryIds\":\"350401\",\"brandIds\":\"193874401|113190408|704278962|3268300|11016\"},{\"categoryIds\":\"350301\",\"brandIds\":\"193874401|113190408|704278962|3268300|11016\"}]";
-        System.out.println(str);
     }
 
 }

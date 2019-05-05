@@ -1,4 +1,4 @@
-package com.liujiazhen.study.lambad;
+package com.liujiazhen.study.lambda;
 
 import org.junit.Test;
 
@@ -85,6 +85,15 @@ public class LambadTest {
     @Test
     public void test6() {
         books().stream().filter(book -> book.getPirce() > 70).sorted(Comparator.comparing(Book::getLocalDate)).forEach(System.out::println);
+    }
+
+    @Test
+    public void test7() {
+
+        double str1 = MyTest.PI_MY;
+        double str2 = MyTest.PI_MY;
+
+        System.out.println(str1 == str2);
     }
 }
 
