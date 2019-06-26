@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
+import java.math.BigDecimal;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -29,16 +30,14 @@ public class LambdaTest2 {
     @Test
     public void test1() {
 
-        String str = "ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=lambda&oq=type-aliases-package%2520%25E9%2580%259A%25E9%2585%258D%25E7%25AC%25A6&rsv_pq=9dab7197000a3c1e&rsv_t=52eatn6PnyCM7OPugG5OehFBR8DgY5E6sPhriUSkn6xDKsf%2B%2FSdC1NrS2JA&rqlang=cn&rsv_enter=0&inputT=1454&rsv_sug3=269&rsv_sug1=234&rsv_sug7=100&bs=type-aliases-package%20通配符";
+        String str = "liujiazhen=utf-8&liujiazhen=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=lambda&oq=type-aliases-package%2520%25E9%2580%259A%25E9%2585%258D%25E7%25AC%25A6";
         String[] split = str.split("&");
 
-        Map<String, String> collect = Stream.of(split).map(s -> s.split("=")).collect(Collectors.toMap(ss -> ss[0], ss -> ss[1]));
+        Map<String, String> collect = Stream.of(split).map(s -> s.split("=")).collect(Collectors.toMap(ss -> ss[0], ss -> ss[1], (v1, v2) -> v1));
 
         Set<Map.Entry<String, String>> entries = collect.entrySet();
 
-        entries.forEach(stringStringEntry -> System.out.println(stringStringEntry.getKey() + stringStringEntry.getValue()));
-
-//        System.out.println(collect);
+        entries.forEach(stringStringEntry -> System.out.println(stringStringEntry.getKey() + "<==>" + stringStringEntry.getValue()));
     }
 
     private static String readData(String message) throws IOException {
@@ -55,4 +54,5 @@ public class LambdaTest2 {
         String test2 = readData("test2");
         System.out.println(test);
     }
+
 }

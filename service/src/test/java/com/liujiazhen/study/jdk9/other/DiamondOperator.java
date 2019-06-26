@@ -47,6 +47,7 @@ public class DiamondOperator {
 abstract class Handler<T> {
     T content;
 
+
     Handler(T content) {
         this.content = content;
     }

@@ -67,7 +67,7 @@ public class LambadTest {
         books.add(new Book(2, "jetty", 60d, "服务器", LocalDate.parse("2015-12-01")));
         books.add(new Book(3, "nginx", 65d, "服务器", LocalDate.parse("2016-10-17")));
         books.add(new Book(4, "java", 66d, "编程语言", LocalDate.parse("2011-04-09")));
-        books.add(new Book(5, "ruby", 80d, "编程语言", LocalDate.parse("2013-05-09")));
+        books.add(new Book(4, "ruby", 80d, "编程语言", LocalDate.parse("2013-05-09")));
         books.add(new Book(6, "php", 40d, "编程语言", LocalDate.parse("2014-08-06")));
         books.add(new Book(7, "html", 44d, "编程语言", LocalDate.parse("2011-01-06")));
         books.add(new Book(8, "oracle", 150d, "数据库", LocalDate.parse("2013-08-09")));
@@ -90,11 +90,10 @@ public class LambadTest {
     @Test
     public void test7() {
 
-        double str1 = MyTest.PI_MY;
-        double str2 = MyTest.PI_MY;
-
-        System.out.println(str1 == str2);
+        books().stream().sorted(Comparator.comparing(Book::getLocalDate).reversed()).forEach(System.out::println);
     }
+
+
 }
 
 class MyTest {
