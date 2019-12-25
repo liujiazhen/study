@@ -3,6 +3,8 @@ package com.liujiazhen.study;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Date;
+
 /**
  * Copyright © 2019 LiuJiazhen
  * <p>
@@ -23,22 +25,13 @@ public class MyTest {
     private static final Logger logger = LoggerFactory.getLogger(MyTest.class);
 
     public static void main(String[] args) {
-        get(null);
+        long time = new Date().getTime();
+        System.out.println(time);
+        String serialNo = String.valueOf(new Date().getTime()).substring(0, 7);
+        System.out.println(serialNo);
+
+        int i = 0;
+        int x = (++i) + (++i);
+        System.out.println(x);
     }
-
-    public static void get(Fu str) {
-        System.out.println(1111);
-    }
-
-    private static void get(Zi tt) {
-        System.out.println(222);
-    }
-}
-
-class Fu {
-
-}
-
-class Zi extends Fu {
-
 }

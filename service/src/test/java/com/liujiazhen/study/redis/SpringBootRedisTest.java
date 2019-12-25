@@ -1,6 +1,7 @@
 package com.liujiazhen.study.redis;
 
-import com.liujiazhen.study.service.ServiceApplication;
+//import com.liujiazhen.study.service.ServiceApplication;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,8 @@ import java.util.List;
  * 2019/4/22      LJZ     v1.0.0      create
  */
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = ServiceApplication.class)
+//@RunWith(SpringRunner.class)
+//@SpringBootTest(classes = ServiceApplication.class)
 public class SpringBootRedisTest {
     @Autowired
     StringRedisTemplate stringRedisTemplate;

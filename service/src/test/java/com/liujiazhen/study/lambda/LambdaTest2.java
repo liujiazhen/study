@@ -31,13 +31,13 @@ public class LambdaTest2 {
     public void test1() {
 
         String str = "liujiazhen=utf-8&liujiazhen=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=lambda&oq=type-aliases-package%2520%25E9%2580%259A%25E9%2585%258D%25E7%25AC%25A6";
-        String[] split = str.split("&");
+//        String[] split = str.split("&");
 
-        Map<String, String> collect = Stream.of(split).map(s -> s.split("=")).collect(Collectors.toMap(ss -> ss[0], ss -> ss[1], (v1, v2) -> v1));
+        Map<String, String> collect = Stream.of(str.split("&")).map(s -> s.split("=")).collect(Collectors.toMap(ss -> ss[0], ss -> ss[1], (v1, v2) -> v1));
 
         Set<Map.Entry<String, String>> entries = collect.entrySet();
 
-        entries.forEach(stringStringEntry -> System.out.println(stringStringEntry.getKey() + "<==>" + stringStringEntry.getValue()));
+        entries.forEach(stringStringEntry -> System.out.println(stringStringEntry.getKey() + " <==> " + stringStringEntry.getValue()));
     }
 
     private static String readData(String message) throws IOException {
@@ -50,9 +50,7 @@ public class LambdaTest2 {
 
     @Test
     public void test2() throws Exception {
-        String test = readData("test1");
-        String test2 = readData("test2");
-        System.out.println(test);
+        
     }
 
 }
